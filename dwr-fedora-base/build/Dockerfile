@@ -25,9 +25,9 @@ RUN dnf install -y vim tree jq git && \
 COPY entrypoint.sh /usr/local/bin
 
 # Add Starship shell prompt
-RUN curl -sSL https://starship.rs/install.sh | sh -s -- --yes --bin-dir "/usr/local/bin" && \
-    echo 'eval "$(starship init bash)"' >> $HOME/.bashrc && \
-    rm -rf /tmp/*
+# RUN curl -sSL https://starship.rs/install.sh | sh -s -- --yes --bin-dir "/usr/local/bin" && \
+#     echo 'eval "$(starship init bash)"' >> $HOME/.bashrc && \
+#     rm -rf /tmp/*
 
 # A last pass on permissions:
 ## - Allow gid 0 to write to /etc/passwd (for OpenShift)
